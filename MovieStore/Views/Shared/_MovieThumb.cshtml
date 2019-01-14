@@ -1,0 +1,15 @@
+﻿@model MovieStore.Models.Movie
+
+
+<div class="col-sm-3">
+    <a asp-action="More" asp-route-id="@Model.Id" asp-controller="Movie"  asp-area="">
+        <img src="@Model.CoverImg" class="img-responsive center-block" style="height:300px;margin-bottom:5px" alt="@Model.Name" />
+    </a>
+    <p>
+        <a asp-action="More" asp-route-id="@Model.Id" asp-controller="Movie" class="btn btn-primary center-block" asp-area="">More</a>
+
+    </p>
+
+
+</div>
+

@@ -1,0 +1,21 @@
+﻿@model MovieStore.Models.Movie
+<div class="row">
+
+    <div class="col-sm-2">
+        <img src="@Model.CoverImg" class="img-responsive" alt="@Model.Name" />
+
+    </div>
+    <div class="col-sm-10">
+        <h4>
+            @Model.Name (@Model.RealaseDate)
+        </h4>
+        <p>Price:  @Model.Price</p>
+        <p>Relase Date: @Model.RealaseDate</p>
+        <p>
+            <a asp-action="More" asp-route-id="@Model.Id" asp-controller="Movie" class="btn btn-primary" asp-area="">More</a>
+            <a asp-action="Create" asp-route-movieid="@Model.Id" asp-controller="Order" asp-area="" class="btn btn-success" style="width:200px">Order</a>
+
+        </p>
+    </div>
+</div>
+<hr />

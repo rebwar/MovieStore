@@ -5,6 +5,13 @@
 }
 
 <h2>Store</h2>
+<div class="text-center">
+    <form method="get" class="form-inline">
+        <input style="width:300px" class="form-control input-lg" name="term" value="@ViewData["text"]" />
+        <button type="submit" class="btn btn-lg btn-warning">Search</button>
+    </form>
+</div>
+
 <hr />
 @foreach (var movie in Model)
 

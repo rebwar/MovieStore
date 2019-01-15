@@ -65,9 +65,20 @@ namespace MovieStore.Controllers
             return RedirectToAction(nameof(Index));
         }
         [AllowAnonymous]
-        public IActionResult MovieStore()
+        [Route("Movie/MovieStore/{term?}")]
+        public IActionResult MovieStore(string term="")
         {
-            var model = _db.Movies;
+            IEnumerable<Movie> model;
+            if(string.IsNullOrEmpty(term))
+            {
+                model = _db.Movies;
+
+            }
+            else
+            {
+                model = _db.Movies.Where(b => b.Name.Contains(term));
+            }
+            ViewData["text"] = term;
             return View(model);
         }
         [AllowAnonymous]
